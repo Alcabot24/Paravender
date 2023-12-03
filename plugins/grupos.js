@@ -167,10 +167,10 @@ if (!m.isGroup) return m.reply(info.group)
 if (!isGroupAdmins) return m.reply(info.admin)
 const pesan = args.join` `;
 const oi = `❑ Mensaje: ${pesan}`;
-let teks = `❑ ━〔 *📢 ＩＮＶＯＣＡＣＩＯＮ 📢* 〕━ ❑\n\n`
+let teks = `*𝗠𝗘𝗡𝗖𝗜𝗢𝗡𝗔𝗡𝗗𝗢 𝗔 𝗧𝗢𝗗𝗢𝗦*\n\n`
 teks += `${oi}\n\n`
 for (let mem of participants) {
-teks += `➥ @${mem.id.split('@')[0]}\n`
+teks += `👤 @${mem.id.split('@')[0]}\n`
 }
 conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
 
@@ -182,7 +182,7 @@ const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).
 const owner = groupMetadata.owner || groupAdmins.find((p) => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net';
 const pesan = args.join` `;
 const oi = `*ᴍᴇɴsᴀᴊᴇ:* ${pesan}`;
-const text = `═✪〘 *ＩＮＶＯＣＡＮＤＯ ＡＤＭＩＮＳ* 〙✪═\n\n• *ɢʀᴜᴘᴏ:* [ ${groupMetadata.subject} ]\n\n• ${oi}\n\n• *ᴀᴅᴍɪɴs:*\n➥ ${listAdmin}\n\n*[ ⚠ ️] ᴜsᴀʀ ᴇsᴛᴇ ᴄᴏᴍᴀɴᴅᴏ sᴏʟᴏ ᴄᴜᴀɴᴅᴏ sᴇ ᴛʀᴀᴛᴇ ᴅᴇ ᴜɴᴀ ᴇᴍᴇʀɢᴇɴᴄɪᴀ*`.trim();
+const text = `𝗠𝗘𝗡𝗖𝗜𝗢𝗡𝗔𝗡𝗗𝗢\n\n• *𝗚𝗥𝗨𝗣𝗢:* [ ${groupMetadata.subject} ]\n\n• ${oi}\n\n• *ᴀᴅᴍɪɴs:*\n➥ ${listAdmin}\n\n*[ ⚠ ️] ᴜsᴀʀ ᴇsᴛᴇ ᴄᴏᴍᴀɴᴅᴏ sᴏʟᴏ ᴄᴜᴀɴᴅᴏ sᴇ ᴛʀᴀᴛᴇ ᴅᴇ ᴜɴᴀ ᴇᴍᴇʀɢᴇɴᴄɪᴀ*`.trim();
 conn.sendMessage(m.chat, { text: text, mentions: participants.map(a => a.id) }, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
 
 if (command == 'infogrupo' || command == 'groupinfo') {
@@ -192,23 +192,23 @@ const {welcome, antilink, antiFake, antiArabe, detect, autosticker, antiNsfw, mo
 const groupAdmins = participants.filter((p) => p.admin);
 const listAdmin = groupAdmins.map((v, i) => `${i + 1} @${v.id.split('@')[0]}`).join('\n ');
 const owner = groupMetadata.owner || groupAdmins.find((p) => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net';
-const text = `╭━━[ .⋅ ɪɴғᴏ ᴅᴇ ɢʀᴜᴘᴏ ⋅]━━━⬣ 
-*🔸️ ɪᴅ:*
+const text = `𝗜𝗡𝗙. 𝗗𝗘𝗟 𝗚𝗥𝗨𝗣𝗢 
+*🤟 𝗜𝗗:*
 • ${groupMetadata.id}
 
-*🔸️ ɴᴏᴍʙʀᴇ* : 
+*🤟 𝗡𝗢𝗠𝗕𝗥𝗘* : 
 • ${groupMetadata.subject}
 
-*🔸️ ᴍɪᴇᴍʙʀᴏs* :
+*🤟 𝗠𝗜𝗘𝗠𝗕𝗥𝗢𝗦* :
 • ${participants.length} Participantes
 
-*🔸️ ᴄʀᴇᴀᴅᴏʀ ᴅᴇʟ ɢʀᴜᴘᴏ:*
+*🤟 𝗖𝗥𝗘𝗔𝗗𝗢𝗥 𝗗𝗘𝗟 𝗚𝗥𝗨𝗣𝗢:*
 • @${owner.split('@')[0]}
 
-*🔸️ ᴀᴅᴍɪɴs:*
+*🤟 𝗔𝗗𝗠𝗜𝗦:*
  ${listAdmin}
 
-*🔸️ ᴄᴏɴғɪɢᴜʀᴀᴄɪᴏɴ ᴅᴇʟ ɢʀᴜᴘᴏ:*
+*🤟 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗖𝗜𝗢𝗡 𝗗𝗘 𝗚𝗥𝗨𝗣𝗢:*
 • Welcome: ${welcome ? '✅' : '❌'}
 • Antilink: ${antilink ? '✅' : '❌'}
 • Antifake: ${antiFake ? '✅' : '❌'}
@@ -218,7 +218,7 @@ const text = `╭━━[ .⋅ ɪɴғᴏ ᴅᴇ ɢʀᴜᴘᴏ ⋅]━━━⬣
 • modocaliente: ${antiNsfw ? '✅' : '❌'}
 • modoadmins: ${modeadmin ? '✅' : '❌'}
 
-*🔸️ ᴅᴇsᴄʀɪᴘᴄɪᴏɴ* :
+*🤟 𝗗𝗘𝗦𝗖𝗥𝗜𝗣𝗖𝗜𝗢𝗡* :
 • ${groupMetadata.desc?.toString() || 'desconocido'}`.trim();
 conn.sendFile(m.chat, pp, 'error.jpg', text, m, false, {mentions: [...groupAdmins.map((v) => v.id), owner]})}
 
