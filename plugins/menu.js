@@ -20,381 +20,103 @@ const date = moment.tz('America/Bogota').format('DD/MM/YYYY')
 const time = moment.tz('America/Argentina/Buenos_Aires').format('LT')
 let wa = m.key.id.length > 21 ? 'Android' : m.key.id.substring(0, 2) == '3A' ? 'IOS' : 'whatsapp web'
 m.react('🙌') 
-let menu = `╔══════ ≪ •❈• ≫ ══════╗
-║◤━━━━━ ☆. ∆ .☆ ━━━━━◥
-║✾ Hola @${sender.split("@")[0]} ${user.registered === true ? 'ͧͧͧͦꙶͣͤ✓' : ''} 👋🏻
-║◤━━━━━ ☆. ∆ .☆ ━━━━━◥
-║✾ ᴘʀᴇғɪᴊᴏ: [ ${prefix} ]
-║✾ ғᴇᴄʜᴀ: ${date}
-║✾ ʜᴏʀᴀ: ${time}
-║✾ ᴜsᴜᴀʀɪᴏ : ${Object.keys(global.db.data.users).length}
-║✾ ᴀᴄᴛɪᴠɪᴅᴀᴅ : ${runtime(process.uptime())}
-║✾ ᴍᴏᴅᴏ : ${conn.public ? 'publico' : 'privado'}
-║✾ ${conn.user.id == global.numBot2 ? 'ʙᴏᴛ ᴏғᴄ : ᴇsᴛᴇ ᴇs ᴇʟ ʙᴏᴛ ᴏғᴄ' : `sᴏʏ ᴜɴ sᴜʙʙᴏᴛ ᴅᴇ : @${global.numBot.split`@`[0]}`}
-║ 
-║✾ ʟɪᴍɪᴛᴇ : ${user.limit}
-║✾ ɴɪᴠᴇʟ : ${user.level}
-║✾ ʀᴀɴɢᴏ : ${user.role}
-║✾ ᴇxᴘ : ${user.exp}
-║✾ ᴄᴏɪɴs : ${user.money}
-║ 
-║✾ ʀᴇɢɪsᴛʀᴀᴅᴏ : ${rtotalreg} de ${totalreg}
-║◤━━━━━ ☆. ∆ .☆ ━━━━━◥
-╚══════ ≪ •❈• ≫ ══════╝
+let menu = 𝗔𝗟𝗖𝗔𝗕𝗢𝗧.𝗩𝟮
 
-===============================
-\`\`\`🎅 ＬＩＳＴＡ ＤＥ ＣＯＭＡＮＤＯ 🎅\`\`\`
-\`\`\`ʙᴏᴛ sɪᴍᴘʟᴇ ᴄᴏɴ ᴘᴏᴄᴏs ᴄᴏᴍᴀɴᴅᴏs\`\`\`
-===============================
+ ┏━━━━━━━━━━━━━━━━━━┓
+┃ *𝗔𝗟𝗖𝗔𝗕𝗢𝗧.𝗩𝟮*
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+┣⟣☯︎ *𝗢𝗪𝗡𝗘𝗥:* ALCAVENTAS
+┣⟣☯︎ *𝗡𝗨𝗠𝗘𝗥𝗢:* +52 824 105 0228
+┗━━━━━━━━━━━━━━━━━━┛
 
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐ℹ️ ＩＮＦＯＢＯＴ*️⃟ᬽ፝֟━*
-├❥ᰰຼ ❏ ${prefix}reg 
-├❥ᰰຼ _(Registrarte para poder usar el bot)_
-├❥ᰰຼ ❏ ${prefix}unreg
-├❥ᰰຼ _(Para borrar su registro)_
-├❥ᰰຼ ❏ ${prefix}myns
-├❥ᰰຼ _(Para ver tu numero de serie)_
-├❥ᰰຼ ❏ ${prefix}estado 
-├❥ᰰຼ _(Comprueba el estado del bot)_
-├❥ᰰຼ ❏ ${prefix}menu2
-├❥ᰰຼ ❏ ${prefix}nuevo 
-├❥ᰰຼ _(Para informarte sobre nuevo comando)_
-├❥ᰰຼ ❏ ${prefix}reglas
-├❥ᰰຼ _(Leer las reglas)_
-├❥ᰰຼ ❏ ${prefix}audios
-├❥ᰰຼ ❏ ${prefix}ping 
-├❥ _(Velocidad del bot)_
-├❥ᰰຼ ❏ ${prefix}grupos 
-├❥ _(Unete al los grupos oficiales y diviértete con el bot 😸)_
-├❥ᰰຼ ❏ ${prefix}join _(solicita un bot para tu grupo)_
-├❥ᰰຼ ❏ ${prefix}owner
-├❥ᰰຼ ❏ ${prefix}creador
-├❥ᰰຼ _(Te envia los contactos de mi creador)_
-├❥ᰰຼ ❏ ${prefix}instalarbot (Tutorial del instalacion)_
-├❥ᰰຼ ❏ ${prefix}report 
-├❥ᰰຼ _(reporta comando con falla/errores/ortografía, etc)_
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
+*┃𝗕 𝗢 𝗧 𝗠 𝗘 𝗡 𝗨 𝗔𝗗𝗠𝗜𝗡𝗜𝗦𝗧𝗥𝗔𝗗𝗢𝗥𝗘𝗦*┃
+┏━━━━━━━━━━━━━━━━┓
+*┃ ✨𝗔𝗖𝗧𝗜𝗩𝗔𝗥 𝗢 𝗗𝗘𝗦𝗔𝗖𝗧𝗜𝗩𝗔𝗥✨*
+┃Enable(activar) Disable(desactivar)┃
+┣⚙️ _.enable *welcome*_
+┣⚙️ _.disable *welcome*_
+┣⚙️ _.enable *antiviewonce*_
+┣⚙️ _.disable *antiviewonce*_
+┣⚙️ _.enable *modoadmin*_
+┣⚙️ _.disable *modoadmin*_
+┗━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━┓
+*┃ ✨𝗔𝗝𝗨𝗦𝗧𝗘𝗦 𝗗𝗘 𝗚𝗥𝗨𝗣𝗢𝗦 ✨* 
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
+┣⚙️ _.add *<numero>*_
+┣⚙️ _.kick *<@tag>*_
+┣⚙️ _.kick2 *<@tag>*_
+┣⚙️ _.listanum *<texto>*_
+┣⚙️ _.kicknum *<texto>*_
+┣⚙️ _.grupo *<abrir / cerrar>*_
+┣⚙️ _.grouptime *<opcion> <tiempo>*_
+┣⚙️ _.promote *<@tag>*_
+┣⚙️ _.demote *<@tag>*_
+┣⚙️ _admins *<texto>*_ (𝑢𝑠𝑜 𝑠𝑖𝑛 𝑝𝑟𝑒𝑓𝑖𝑗𝑜)
+┣⚙️ _.demote *<@tag>*_
+┣⚙️ _.infogroup_
+┣⚙️ _.resetlink_
+┣⚙️ _.link_
+┣⚙️ _.setname *<texto>*_
+┣⚙️ _.setdesc *<texto>*_
+┣⚙️ _.invocar *<texto>*_
+┣⚙️ _.setwelcome *<texto>*_
+┣⚙️ _.setbye *<texto>*_
+┣⚙️ _.hidetag *<texto>*_
+┣⚙️ _.hidetag *<audio>*_
+┣⚙️ _.hidetag *<video>*_
+┣⚙️ _.hidetag *<imagen>*_
+┣⚙️ _.warn *<@tag>*_
+┣⚙️ _.unwarn *<@tag>*_
+┣⚙️ _.listwarn_
+┣⚙️ _.fantasmas_
+┣⚙️ _.destraba_
+┣⚙️ _.setpp *<imagen>*_
+┗━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━┓
+*┃✨ 𝗕𝗨𝗦𝗖𝗔𝗥 ✨*
+┃ 𝗔𝗟𝗖𝗔𝗕𝗢𝗧.𝗩𝟮 ≡┃
+┣✨ _.githubsearch *<texto>*_
+┣✨ _.pelisplus *<texto>*_
+┣✨ _.modapk *<texto>*_
+┣✨ _.stickersearch *<texto>*_
+┣✨ _.stickersearch2 *<texto>*_
+┣✨ _.animeinfo *<texto>*_
+┣✨ _.google *<texto>*_
+┗━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━┓
+*┃✨ 𝗙𝗥𝗔𝗦𝗘𝗦 𝗢 𝗣𝗜𝗥𝗢𝗣𝗢𝗦✨*
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
+┣⚫️ _.piropo_
+┣⚫️ _.consejo_
+┣⚫️ _.fraseromantica_
+┣⚫️ _.historiaromantica_
+┗━━━━━━━━━━━━━━━━┛
 
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐🤖ＪＡＤＩＢＯＴ*️⃟ᬽ፝֟━*
-├❥ᰰຼ  *(Este serbot esta modo beta)*
-├ *✧･ﾟ: *✧･ﾟ:*✧･ﾟ: *✧･ﾟ:*✧･ﾟ: *✧･ﾟ:
-├❥ᰰຼ ❏ ${prefix}serbot
-├❥ᰰຼ ❏ ${prefix}qr
-├❥ _(Genera un qr para convertirte en un sub bot)_
-├❥ᰰຼ ❏ ${prefix}serbot --code
-├❥ᰰຼ ❏ ${prefix}jadibot --code
-├❥ _(Nueva forma de hacerte un subbot ¡beta!)_
-├❥ᰰຼ ❏ ${prefix}bots
-├❥ _(Comprueba si hay sub bot conectado)_
-├❥ᰰຼ ❏ ${prefix}stop
-├❥ᰰຼ ❏ ${prefix}deljadibot
-├❥ᰰຼ _(Comando solo para los sub bot)_
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
-
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐🔄ＤＥＳＣＡＲＧＡ*️⃟ᬽ፝֟━*
-├❥ᰰຼ ❏ ${prefix}play 
-├❥ᰰຼ _(Titulo/nombre de la canción para descargar el audio)_
-├❥ᰰຼ ❏ ${prefix}play2
-├❥ᰰຼ _(Titulo/nombre de la canción para descargar el video)_
-├❥ᰰຼ ❏ ${prefix}playdoc
-├❥ᰰຼ ❏ ${prefix}play3
-├❥ᰰຼ _(Descarga audio en documento)_
-├❥ᰰຼ ❏ ${prefix}play4 
-├❥ᰰຼ _(Descarga video en documento)_
-├❥ᰰຼ ❏ ${prefix}yts 
-├❥ᰰຼ  _(Busca los links para descarga el video)_
-├❥ᰰຼ ❏ ${prefix}ytmp3
-├❥ᰰຼ _(Ingresa el link para descargar el audio)_
-├❥ᰰຼ ❏ ${prefix}ytmp4
-├❥ᰰຼ _(Ingresa el link para descargar el video)_
-├❥ᰰຼ ❏ ${prefix}spotify
-├❥ᰰຼ ❏ ${prefix}music
-├❥ᰰຼ _(Descarga musica de Spotify)_
-├❥ᰰຼ ❏ ${prefix}gitclone
-├❥ᰰຼ _(Ingresa el link del GitHub para descargar el repositorio)_
-├❥ᰰຼ ❏ ${prefix}tiktok
-├❥ᰰຼ _(Ingresa el link de tiktok para descargar el video)_
-├❥ᰰຼ ❏ ${prefix}tiktokimg
-├❥ᰰຼ ❏ ${prefix}ttimg
-├❥ᰰຼ ❏ ${prefix}igstalk
-├❥ᰰຼ _(Ingresa el nombre de un usuario de Instagram para ver su perfil)_
-├❥ᰰຼ ❏ ${prefix}facebook
-├❥ᰰຼ ❏ ${prefix}fb
-├❥ᰰຼ _(Descarga videos de Facebook)_
-├❥ᰰຼ ❏ ${prefix}instagram
-├❥ᰰຼ ❏ ${prefix}ig
-├❥ᰰຼ _(Descarga videos de Instagram)_
-├❥ᰰຼ ❏ ${prefix}mediafire
-├❥ᰰຼ (descarga archivos de mediafire)_
-├❥ᰰຼ ❏ ${prefix}gdrive
-├❥ᰰຼ _(Descarga archivos de gdrive)_
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
-
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*🔰⃐ＧＲＵＰＯＳ*️⃟ᬽ፝֟━*
-├❥ᰰຼ ❏ ${prefix}welcome _(on/off)_
-├❥ᰰຼ ❏ ${prefix}antilink _(on/off)_
-├❥ᰰຼ ❏ ${prefix}antienlace _(on/off)_
-├❥ᰰຼ ❏ ${prefix}antifake _(on/off)_
-├❥ᰰຼ ❏ ${prefix}antiarabe _(on/off)_
-├❥ᰰຼ ❏ ${prefix}autosticker _(on/off)_
-├❥ᰰຼ ❏ ${prefix}detect _(on/off)_
-├❥ᰰຼ ❏ ${prefix}autodetect _(on/off)_
-├❥ᰰຼ ❏ ${prefix}antinsfw _(on/off)_
-├❥ᰰຼ ❏ ${prefix}modocaliente _(on/off)_
-├❥ᰰຼ ❏ ${prefix}autosticker _(on/off)_
-├❥ᰰຼ ❏ ${prefix}modoadmin _(on/off)_
-├❥ᰰຼ ❏ ${prefix}audios _(on/off)_
-├❥ᰰຼ ❏ ${prefix}chatbot _(on/off)_
-├❥ᰰຼ ❏ ${prefix}autolevelup _(on/off)_
-├❥ᰰຼ ❏ ${prefix}autonivel _(on/off)_
-├❥ᰰຼ ❏ ${prefix}kick _(@tag)_
-├❥ᰰຼ ❏ ${prefix}add _(@tag)_
-├❥ᰰຼ ❏ ${prefix}invita _(@tag)_
-├❥ᰰຼ ❏ ${prefix}promote _(@tag)_
-├❥ᰰຼ ❏ ${prefix}demote _(@tag)_
-├❥ᰰຼ ❏ ${prefix}infogrupo
-├❥ᰰຼ ❏ ${prefix}groupinfo
-├❥ᰰຼ ❏ ${prefix}admins _(llama a los admins)_
-├❥ᰰຼ ❏ ${prefix}grupo close/open 
-├❥ᰰຼ ❏ ${prefix}warn _(@tag)_
-├❥ᰰຼ ❏ ${prefix}advertencia _(@tag)_
-├❥ᰰຼ ❏ ${prefix}unwarn _(@tag)_
-├❥ᰰຼ ❏ ${prefix}quitardvertencia _(@tag)_
-├❥ᰰຼ ❏ ${prefix}setppname _(cambia el nombre del grupo)_
-├❥ᰰຼ ❏ ${prefix}setdesc _(cambia la descripción del Grupo)_
-├❥ᰰຼ ❏ ${prefix}setppgroup _(cambia la foto del Grupo)_
-├❥ᰰຼ ❏ ${prefix}anularlink 
-├❥ᰰຼ ❏ ${prefix}resetlink _(restablece el link del grupo)_
-├❥ᰰຼ ❏ ${prefix}hidetag _(etiqueta a todos el un mensaje)_
-├❥ᰰຼ ❏ ${prefix}tagall 
-├❥ᰰຼ ❏ ${prefix}invocar _(etiqueta a todos el una listas)_
-├❥ᰰຼ ❏ ${prefix}listonline _(etiquetas a los usuarios que esta activo|online)_
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
-
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*🔎⃐ＢＵＳＣＡＤＯＲＥＳ*️⃟ᬽ፝֟━*
-├❥ᰰຼ ❏ ${prefix}google 
-├❥ᰰຼ _(Ingresa nombre de lo que quiere buscar)_
-├❥ᰰຼ ❏ ${prefix}ia 
-├❥ᰰຼ _(Ingresa el texto de lo que quiere buscar con la (IA)_
-├❥ᰰຼ ❏ ${prefix}imagen
-├❥ᰰຼ _Ingresa el texto de la imagen que quiere buscar_
-├❥ᰰຼ ❏ ${prefix}traducir
-├❥ᰰຼ _(Traducir algun texto)_
-├❥ᰰຼ ❏ ${prefix}wallpaper
-├❥ᰰຼ _(Buscar imagen del wallpaper)_
-├❥ᰰຼ ❏ ${prefix}ss 
-├❥ᰰຼ _(Ingresa un link para mandar captura)_
-├❥ᰰຼ ❏ ${prefix}dall-e
-├❥ᰰຼ ❏ ${prefix}ia2
-├❥ᰰຼ _(Crea imagenes con la (IA)_
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
-
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐👾ＪＵＥＧＯＳ*️⃟ᬽ፝֟━*
-├❥ᰰຼ ❏ ${prefix}simi 
-├❥ᰰຼ _(Hablar con el bot)_
-├❥ᰰຼ ❏ ${prefix}ppt
-├❥ᰰຼ _(Juegas un piedra, papel, o tijera)_
-├❥ᰰຼ ❏ ${prefix}gay @tag
-├❥ᰰຼ ❏ ${prefix}pareja @tag
-├❥ᰰຼ ❏ ${prefix}love @tag
-├❥ᰰຼ ❏ ${prefix}follar @tag
-├❥ᰰຼ ❏ ${prefix}topgays
-├❥ᰰຼ ❏ ${prefix}topotakus
-├❥ᰰຼ ❏ ${prefix}top
-├❥ᰰຼ ❏ ${prefix}pregunta
-├❥ᰰຼ ❏ ${prefix}verdad
-├❥ᰰຼ ❏ ${prefix}reto
-├❥ᰰຼ ❏ ${prefix}doxear
-├❥ᰰຼ ❏ ${prefix}personalidad
-├❥ᰰຼ ❏ ${prefix}racista
-├❥ᰰຼ ❏ ${prefix}slot
-├❥ᰰຼ ❏ ${prefix}dado
-├❥ᰰຼ ❏ ${prefix}piropo
-├❥ᰰຼ ❏ ${prefix}ship
-├❥ᰰຼ ❏ ${prefix}formartrio
-├❥ᰰຼ ❏ ${prefix}formapareja5
-├❥ᰰຼ ❏ ${prefix}fake
-├❥ᰰຼ _(Ingresa el texto + tag para joder a alguien con chat fake😹)_
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
-
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*🎤 EFECTOS DE AUDIOS*️⃟ᬽ፝֟━*
-├❥ᰰຼ *(𝚁𝙴𝚂𝙿𝙾𝙽𝙳𝙴 𝙰 𝙰𝚄𝙳𝙸𝙾 𝙾 𝙽𝙾𝚃𝙰 𝙳𝙴 𝚅𝙾𝚉)*
-├ *✧･ﾟ: *✧･ﾟ:*✧･ﾟ: *✧･ﾟ:*✧･ﾟ: *✧･ﾟ:
-├❥ᰰຼ ❏ ${prefix}bass
-├❥ᰰຼ ❏ ${prefix}blown
-├❥ᰰຼ ❏ ${prefix}deep
-├❥ᰰຼ ❏ ${prefix}earrape
-├❥ᰰຼ ❏ ${prefix}fast
-├❥ᰰຼ ❏ ${prefix}fat
-├❥ᰰຼ ❏ ${prefix}nightcore
-├❥ᰰຼ ❏ ${prefix}reverse
-├❥ᰰຼ ❏ ${prefix}robot
-├❥ᰰຼ ❏ ${prefix}slow
-├❥ᰰຼ ❏ ${prefix}smooth
-├❥ᰰຼ ❏ ${prefix}squirrel
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
-
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐🧧CONVERTIDORES*️⃟ᬽ፝֟━*
-├❥ᰰຼ ❏ ${prefix}tourl
-├❥ᰰຼ ❏ ${prefix}tts
-├❥ᰰຼ ❏ ${prefix}tomp3
-├❥ᰰຼ ❏ ${prefix}toimg
-├❥ᰰຼ ❏ ${prefix}toaudio
-├❥ᰰຼ ❏ ${prefix}toanime
-├❥ᰰຼ ❏ ${prefix}hd
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫* 	
-
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐🥵COMANDO +18*️⃟ᬽ፝֟━*
-├❥ᰰຼ  *Activa con (antiNsfw on)*
-├ *✧･ﾟ: *✧･ﾟ:*✧･ﾟ: *✧･ﾟ:*✧･ﾟ: *✧･ﾟ:
-├❥ᰰຼ ❏ ${prefix}pussy
-├❥ᰰຼ ❏ ${prefix}nsfwloli
-├❥ᰰຼ ❏ ${prefix}hentai
-├❥ᰰຼ ❏ ${prefix}hentai2
-├❥ᰰຼ ❏ ${prefix}pack
-├❥ᰰຼ ❏ ${prefix}pack2
-├❥ᰰຼ ❏ ${prefix}pack3
-├❥ᰰຼ ❏ ${prefix}videoxxx
-├❥ᰰຼ ❏ ${prefix}videoxxxlesbi
-├❥ᰰຼ ❏ ${prefix}pornolesbianavid
-├❥ᰰຼ ❏ ${prefix}videolesbixxx
-├❥ᰰຼ ❏ ${prefix}porno
-├❥ᰰຼ ❏ ${prefix}lewd'
-├❥ᰰຼ ❏ ${prefix}feed'
-├❥ᰰຼ ❏ ${prefix}gasm
-├❥ᰰຼ ❏ ${prefix}anal	    	
-├❥ᰰຼ ❏ ${prefix}holo	    	
-├❥ᰰຼ ❏ ${prefix}tits	    	
-├❥ᰰຼ ❏ ${prefix}kuni
-├❥ᰰຼ ❏ ${prefix}kiss
-├❥ᰰຼ ❏ ${prefix}erok
-├❥ᰰຼ ❏ ${prefix}smug
-├❥ᰰຼ ❏ ${prefix}solog
-├❥ᰰຼ ❏ ${prefix}feetg
-├❥ᰰຼ ❏ ${prefix}lewdk    
-├❥ᰰຼ ❏ ${prefix}femdom
-├❥ᰰຼ ❏ ${prefix}cuddle
-├❥ᰰຼ ❏ ${prefix}eroyuri
-├❥ᰰຼ ❏ ${prefix}cum	    
-├❥ᰰຼ ❏ ${prefix}blowjob
-├❥ᰰຼ ❏ ${prefix}holoero
-├❥ᰰຼ ❏ ${prefix}erokemo
-├❥ᰰຼ ❏ ${prefix}fox_girl
-├❥ᰰຼ ❏ ${prefix}futanari
-├❥ᰰຼ ❏ ${prefix}wallpaper	   
-├❥ᰰຼ *Nota: usarlo baja tu responsabilidad*
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫* 	
-	
-╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⛩️ ⃐RANDOW*️⃟ᬽ፝֟━*
-├❥ᰰຼ ❏ ${prefix}memes
-├❥ᰰຼ ❏ ${prefix}horny
-├❥ᰰຼ ❏ ${prefix}simp
-├❥ᰰຼ ❏ ${prefix}lolice
-├❥ᰰຼ ❏ ${prefix}comentar
-├❥ᰰຼ ❏ ${prefix}comment
-├❥ᰰຼ ❏ ${prefix}loli
-├❥ᰰຼ ❏ ${prefix}lolivid
-├❥ᰰຼ ❏ ${prefix}neko
-├❥ᰰຼ ❏ ${prefix}waifu	
-├❥ᰰຼ ❏ ${prefix}blackpink
-├❥ᰰຼ ❏ ${prefix}akira
-├❥ᰰຼ ❏ ${prefix}akiyama
-├❥ᰰຼ ❏ ${prefix}anna
-├❥ᰰຼ ❏ ${prefix}asuna
-├❥ᰰຼ ❏ ${prefix}ayuzawa
-├❥ᰰຼ ❏ ${prefix}boruto
-├❥ᰰຼ ❏ ${prefix}chiho
-├❥ᰰຼ ❏ ${prefix}chitoge
-├❥ᰰຼ ❏ ${prefix}deidara
-├❥ᰰຼ ❏ ${prefix}erza
-├❥ᰰຼ ❏ ${prefix}elaina
-├❥ᰰຼ ❏ ${prefix}eba
-├❥ᰰຼ ❏ ${prefix}emilia
-├❥ᰰຼ ❏ ${prefix}hestia
-├❥ᰰຼ ❏ ${prefix}hinata
-├❥ᰰຼ ❏ ${prefix}inori
-├❥ᰰຼ ❏ ${prefix}isuzu
-├❥ᰰຼ ❏ ${prefix}itachi
-├❥ᰰຼ ❏ ${prefix}itori
-├❥ᰰຼ ❏ ${prefix}kaga
-├❥ᰰຼ ❏ ${prefix}kagura
-├❥ᰰຼ ❏ ${prefix}kaori':
-├❥ᰰຼ ❏ ${prefix}keneki
-├❥ᰰຼ ❏ ${prefix}kotori
-├❥ᰰຼ ❏ ${prefix}kurumi
-├❥ᰰຼ ❏ ${prefix}madara
-├❥ᰰຼ ❏ ${prefix}mikasa
-├❥ᰰຼ ❏ ${prefix}miku
-├❥ᰰຼ ❏ ${prefix}minato
-├❥ᰰຼ ❏ ${prefix}naruto
-├❥ᰰຼ ❏ ${prefix}nezuko
-├❥ᰰຼ ❏ ${prefix}sagiri
-├❥ᰰຼ ❏ ${prefix}sasuke
-├❥ᰰຼ ❏ ${prefix}sakura
-├❥ᰰຼ ❏ ${prefix}'cosplay
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
-             
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐🪙 ＥＣＯＮＯＭＩＡ*️⃟ᬽ፝֟━*
-├❥ᰰຼ ❏ ${prefix}minar _(Para minar exp)_
-├❥ᰰຼ ❏ ${prefix}robar
-├❥ᰰຼ ❏ ${prefix}rob _(Roba exp algun usuarios)_
-├❥ᰰຼ ❏ ${prefix}trabajar
-├❥ᰰຼ ❏ ${prefix}work _(Trabaja y ganas exp)_
-├❥ᰰຼ ❏ ${prefix}buy _(Comprar mas diamantes (limit)_
-├❥ᰰຼ ❏ ${prefix}bal
-├❥ᰰຼ ❏ ${prefix}balace _(Para saber cuanto diamante/exp tienes)_
-├❥ᰰຼ ❏ ${prefix}claim
-├❥ᰰຼ _(Recoger tu recompensa)_
-├❥ᰰຼ ❏ ${prefix}lb
-├❥ᰰຼ ❏ ${prefix}leaderboard
-├❥ᰰຼ ❏ ${prefix}cofre
-├❥ᰰຼ ❏ ${prefix}perfil
-├❥ᰰຼ ❏ ${prefix}nivel
-├❥ᰰຼ ❏ ${prefix}levelup
-├❥ᰰຼ ❏ ${prefix}afk 
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
-
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐👽ＳＴＩＣＫＥＲ*️⃟ᬽ፝֟━*
-├❥ᰰຼ ❏ ${prefix}s
-├❥ᰰຼ ❏ ${prefix}sticker 
-├❥ᰰຼ ❏ ${prefix}wm
-├❥ᰰຼ ❏ ${prefix}attp
-├❥ᰰຼ ❏ ${prefix}emojimix
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*
-
-*╭─╮─᤻─᳒─᤻᳒᯽⃟ᰳᰬᰶ┈*⃐👑ＯＷＮＥＲ*️⃟ᬽ፝֟━*
-├❥ _(Comando exclusivo para propietario/owner del bot)_
-├ *✧･ﾟ: *✧･ﾟ:*✧･ﾟ: *✧･ﾟ:*✧･ﾟ: *✧･ﾟ:
-├❥ᰰຼ ❏ ${prefix}anticall _(on/off)_
-├❥ᰰຼ ❏ ${prefix}antillamada _(on/off)_
-├❥ᰰຼ ❏ ${prefix}antipv _(on/off)_
-├❥ᰰຼ ❏ ${prefix}antiprivado _(on/off)_
-├❥ᰰຼ ❏ ${prefix}autoread _(on/off)_
-├❥ᰰຼ ❏ ${prefix}modojadibot _(on/off)_
-├❥ᰰຼ ❏ ${prefix}añadirdiamantes
-├❥ᰰຼ ❏ ${prefix}addlimit
-├❥ᰰຼ ❏ ${prefix}dardiamantes _(@tag)_
-├❥ᰰຼ ❏ ${prefix}añadirxp
-├❥ᰰຼ ❏ ${prefix}addxp _(@tag)_
-├❥ᰰຼ ❏ ${prefix}banuser _(Banea algun usuario por mal uso del bot)_
-├❥ᰰຼ ❏ ${prefix}unbanuser _(Desbanea al usuario)_
-├❥ᰰຼ ❏ ${prefix}autoadmin 
-├❥ᰰຼ ❏ ${prefix}bc (Difusión a todos los chat)
-├❥ᰰຼ ❏ ${prefix}bcgc (Difusión solo a grupos)
-├❥ᰰຼ ❏ ${prefix}setpp (Cambia la foto del bot) 
-├❥ᰰຼ ❏ ${prefix}public (Modo público) 
-├❥ᰰຼ ❏ ${prefix}privado (Modo privado) 
-├❥ᰰຼ ❏ ${prefix}getcase
-├❥ᰰຼ ❏ ${prefix}addcase
-├❥ᰰຼ ❏ ${prefix}update
-├❥ᰰຼ ❏ ${prefix}restart
-├❥ᰰຼ ❏ ${prefix}reiniciar
-├❥ᰰຼ ❏ ${prefix}unbanned
-├❥ᰰຼ ❏ ${prefix}sacasupport
-├❥ᰰຼ ❏ $
-├❥ᰰຼ ❏ >
-├❥ᰰຼ ❏ => 
-*╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫*`
+┏━━━━━━━━━━━━━━━━┓
+*┃✨ 𝗛𝗘𝗥𝗥𝗔𝗠𝗜𝗘𝗡𝗧𝗔𝗦✨*
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
+┣🟠 _.clima *<país> <ciudad>*_
+┣🟠 _.encuesta *<texto1|texto2...>*_
+┣🟠 _.ocr *<responde a imagen>*_
+┣🟠 _.hd *<responde a imagen>*_
+┣🟠 _.acortar *<enlace / link / url>*_
+┣🟠 _.calc *<operacion math>*_
+┣🟠 _.horario_
+┗━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━┓
+*┃ ✨𝗦𝗧𝗜𝗖𝗞𝗘𝗥𝗦✨*
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
+┣🟣 _.sticker *<responder a imagen o video>*_
+┣🟣 _.kiss *<@tag>*_
+┣🟣 _.dado_
+┗━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━┓
+*┃ ✨ 𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗦 ✨*
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
+┣🟣 _.play *<texto de la canción >*_
+┗━━━━━━━━━━━━━━━━┛
+𝘾𝙍𝙀𝘼𝘿𝙊𝙍 @𝘼𝙇𝘾𝘼𝙎𝙃𝙊𝙋 𝘾𝙐𝘼𝙇𝙌𝙐𝙄𝙀𝙍 𝘿𝙐𝘿𝘼 𝙈𝘼𝙉𝘿𝘼𝙍𝙈𝙀 𝙈𝙀𝙉𝙎𝘼𝙅𝙀 𝘼𝙇 𝙒𝙋𝙋 +5282410502208`.trim();
 conn.sendMessage(m.chat, { text: menu,  
 contextInfo:{  
 forwardingScore: 9999999,  
