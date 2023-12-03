@@ -4,14 +4,14 @@ const path = require('path')
 const chalk = require('chalk') 
 
 //---------[ PROPIETADO/OWNER ]---------
-global.owner = [["5492266466080", "Owner", true], ["573026191480", "asistencia", true], ["593968585383"], ["5492266466080"], ["595985451858"], ["5492266613038"], ["5217294888993"],["5214437863111"]]
+global.owner = [["528241050228", "𝗔𝗟𝗖𝗔𝗕𝗢𝗧.𝗩𝟮", true], ["573026191480", "asistencia", true], ["593968585383"], ["5492266466080"], ["595985451858"], ["5492266613038"], ["5217294888993"],["5214437863111"]]
 global.mods = []
 global.premium = []  
 global.blockList = []  
 
 //---------[ NOMBRE/INFO ]---------
-global.botname = "𝐍𝐨𝐯𝐚𝐁𝐨𝐭-𝐌𝐃"
-global.wm = 'Ｎ Ｏ Ｖ Ａ Ｂ Ｏ Ｔ- Ｍ Ｄ 💫'
+global.botname = "𝗔𝗟𝗖𝗔𝗕𝗢𝗧.𝗩𝟮"
+global.wm = '𝗔𝗟𝗖𝗔𝗕𝗢𝗧.𝗩𝟮 💫'
 global.vs = '1.0.2 (Beta)'
 
 //---------[ FECHA/IDIOMAS ]---------
@@ -63,14 +63,14 @@ global.APIKeys = {
 };
  
 //---------[ STICKERS ]---------
-global.packname = "𝐍𝐨𝐯𝐚𝐁𝐨𝐭-𝐌𝐃"
+global.packname = "𝗔𝗟𝗖𝗔𝗕𝗢𝗧.𝗩𝟮"
 global.author = `${vs}`
  
 //---------[ IMAGEN ]---------
-global.imagen1 = fs.readFileSync('./media/menu.jpg')
-global.imagen2 = fs.readFileSync('./media/menu2.jpg')
-global.imagen3 = fs.readFileSync('./media/menu3.jpg')
-global.noperfil = fs.readFileSync('./media/sinfoto.jpg')
+global.imagen1 = fs.readFileSync('./media/alca.png')
+global.imagen2 = fs.readFileSync('./media/alca.png')
+global.imagen3 = fs.readFileSync('./media/alca.png')
+global.noperfil = fs.readFileSync('./media/alca.png')
 
 //---------[ ENLACE ]---------
 global.md = 'https://github.com/elrebelde21/NovaBot-MD'
